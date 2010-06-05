@@ -1,0 +1,40 @@
+<Html>
+	<Head>
+		<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+		<Title>Chiamata in arrivo</Title>
+		
+<script type="text/javascript" language="javascript" src="querystring.js">
+</script>
+<script type="text/javascript" language="javascript">
+function onLoad() {
+	var qs = new Querystring();
+	var numero = qs.get('numero');
+	var numeroSpan = document.getElementById('numero');
+	numeroSpan.innerText = numero;
+	returnValue=false;
+}
+</script>
+<style>
+body {
+	background-color: red;
+	text-align: center;
+	color: white;
+	vertical-align: middle;
+}
+.numero {
+	font-size: 50px;
+}
+</style>
+	</Head>
+	<Body onload="onLoad()">
+	<table height="100%">
+	<tr><td align="center" valign="middle">
+	<h1>Chiamata in arrivo</h1>
+	da <span class="numero" id="numero">numero</span><br/>
+	<input type="button" onClick="returnValue=true;window.close()" value="  rispondi  " />	
+	<input type="button" onClick="returnValue=false;window.close()" value="  ignora  " />	
+	</Body>
+	</td
+	</tr>
+	</tr>
+</Html>

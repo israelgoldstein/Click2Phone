@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 3.1.0.4545
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSPhone", "FSPhone.csproj", "{FC056CDD-2C4C-4D7F-8D24-7B6364594F28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneControls", "..\PhoneControls\PhoneControls.csproj", "{5597AF9C-FF97-4E55-A105-730086BE09F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC056CDD-2C4C-4D7F-8D24-7B6364594F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC056CDD-2C4C-4D7F-8D24-7B6364594F28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC056CDD-2C4C-4D7F-8D24-7B6364594F28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC056CDD-2C4C-4D7F-8D24-7B6364594F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5597AF9C-FF97-4E55-A105-730086BE09F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5597AF9C-FF97-4E55-A105-730086BE09F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5597AF9C-FF97-4E55-A105-730086BE09F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5597AF9C-FF97-4E55-A105-730086BE09F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

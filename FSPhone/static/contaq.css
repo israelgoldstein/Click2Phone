@@ -1,0 +1,21 @@
+.myinput {
+	width: 300;
+}
+.mybutton {
+	left: 100;
+	width: 100;
+}
+.pannello {
+	padding-left: 20px;
+}
+.barretta {
+	width: 450; 
+	text-align: right;
+	background-color: 86ABC4;
+	border: black solid thin;
+	padding: 10px;
+}
+.titoletto {
+	text-align: left;
+	font-weight: bold;
+}

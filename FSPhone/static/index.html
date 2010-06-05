@@ -1,0 +1,41 @@
+<Html>
+	<Head>
+		<Title>pagina iniziale</Title>
+		<meta http-equiv="no Refresh" content="0; url=http://contaq:81">
+		<script language="javascript" src="contaq.js" type="text/javascript" >
+		</script>
+		<script language="javascript" src="querystring.js" type="text/javascript" >
+		</script>
+		<link rel="stylesheet" type="text/css" href="contaq.css" />		
+	<script language="javascript" >
+function onLoad() {
+	//alert("javascript onload OK");
+	//setAutorouting("");
+	//setAutorouting( "393;393;394", "396;out-");
+	//contaq("setautorouting", "mobile=393;393;394&landline=396;out-");
+	//defaultAutorouting();
+	//callback("onIncomingCall=javascript:ContaqAskToAnswer('${operatorid}', '${caller}', '${called}')");
+}
+	</script>
+	</Head>
+	<div id="phonepanel">
+	</div>
+	
+	<Body onload="onLoad()">
+	
+	<div class="testata">
+	<a href="#" onClick="contaq('home');return false;"><img border="0" src="contaQlogo.png" style="vertical-aligjn: middle;"/></a>
+	&nbsp;tele<font color="red">m</font>arketing system
+	</div>
+	This is just a placeholder to test the contaQconsole application. Here you can:
+	<h3>Setup the console</h3>
+	<ul>
+		<li><font color="green">[ok]</font> <a href="contaq:test">Issue a <i>test</i> command using protocol contaq://</a>
+		<li><font color="green">[ok]</font> <a href="contaq:shell?executable=c:\temp\test.cmd&arguments=uno due tre">Issue a <i>shell</i> command with arguments "uno due tre"</a>
+		<li><font color="green">[ok]</font> <a href="sip:setcallback?onRegistered=${root}\ContaQ\static\registered.html">Set callback url for onRegistered to <i>${root}\ContaQ\static\registered.html</i></a>
+		<li><font color="green">[ok]</font> <a href="sip:register?operatorid=1000&pin=1234&displayname=Mille&domain=*&registrar=127.0.0.1">Register as operator 1000 with pin 1234 to domain * with registrar as 127.0.0.1 - displayname=Mille (outbound)</a>
+		<li><font color="green">[ok]</font> <a href="sip:register?operatorid=5000&pin=1234&displayname=Cinquemila&domain=*&registrar=127.0.0.1">Register as operator 5000 with pin 1234 to domain * with registrar as 127.0.0.1 - displayname=Cinquemila (inbound)</a>
+		<li><font color="green">[ok]</font> <a href="sip:unregister">Unregister</a>
+	</ul>
+	</Body>
+</Html>

@@ -1,0 +1,112 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FC056CDD-2C4C-4D7F-8D24-7B6364594F28}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FSPhone</RootNamespace>
+    <AssemblyName>FSPhone</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\oi43839\Dati applicazioni\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WaveLibMixer">
+      <HintPath>lib\WaveLibMixer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContaQForm.cs" />
+    <Compile Include="ContaQForm.Designer.cs">
+      <DependentUpon>ContaQForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ContaQForm.resx">
+      <DependentUpon>ContaQForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="FSPhone.exe.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\ESL.dll">
+      <Link>ESL.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="static\answered.html" />
+    <None Include="static\barretta.html" />
+    <None Include="static\calling.html" />
+    <None Include="static\contaq.css" />
+    <None Include="static\contaQ.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="static\contaq.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="static\contaqlogo.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="static\hangup.html" />
+    <None Include="static\incoming.html" />
+    <None Include="static\incomingdialog.html" />
+    <None Include="static\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="static\querystring.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="static\registered.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\freeswitch\libs\esl\managed\ManagedEsl.csproj">
+      <Project>{DEE5837B-E01D-4223-B351-EDF9418F3F8E}</Project>
+      <Name>ManagedEsl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\freeswitch\src\mod\languages\mod_managed\managed\FreeSWITCH.Managed.csproj">
+      <Project>{834E2B2F-5483-4B80-8FE3-FE48FF76E5C0}</Project>
+      <Name>FreeSWITCH.Managed</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhoneControls\PhoneControls.csproj">
+      <Project>{5597AF9C-FF97-4E55-A105-730086BE09F3}</Project>
+      <Name>PhoneControls</Name>
+    </ProjectReference>
+    <Folder Include="static" />
+  </ItemGroup>
+</Project>

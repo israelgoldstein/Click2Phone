@@ -1,0 +1,90 @@
+<Html>
+	<Head>
+		<Title>Test telefonici</Title>
+		<meta http-equiv="no Refresh" content="0; url=http://contaq:81">
+		<link rel="stylesheet" type="text/css" href="contaq.css" />		
+<script type="text/javascript" language="javascript" src="querystring.js"></script>
+<script type="text/javascript" language="javascript" src="contaq.js"></script>
+<script>
+function onLogin(theForm) {
+	theForm.displayname.value = 'Operatore ' + theForm.userid.value;
+	login(theForm.userid.value , theForm.pwd.value, theForm.displayname.value, theForm.domain.value, theForm.registrar.value);
+	return false;
+}
+
+function doLogin() {
+	onLogin(document.forms['login']);
+}
+
+function onCall(theForm) {
+	call(theForm.prefix.value + theForm.number.value );
+	return false;
+}
+
+function placeCall(number) {
+	//doLogin(document.forms['login']);
+	onCall(document.forms['call'])
+}
+
+function messageBox(message) {
+	window.alert(message);
+	window.navigate("#");
+}
+
+function scoda(number) {
+	logout();
+	pickup(number);
+}
+
+function askToAnswer(number) {
+	var yesno = window.showModalDialog('incomingdialog.html?numero=' + number);
+	//var yesno = window.confirm('Chiamata in arrivo da ' + number + ': vuoi rispondere?');
+	if (yesno) {
+		logout();
+		answer();
+	}
+}
+
+function onLoad() {
+	//setCallback("onRegistered=javascript:window.alert('Registrato ${operatorid}')");
+	callback("onIncomingCall=javascript:askToAnswer('${number}')");
+	var qs = new Querystring();
+	document.forms['login'].userid.value=qs.get("ext", "1001");
+	document.forms['login'].pwd.value=qs.get("pwd", "1234");
+	doLogin(document.forms['login']);
+}
+</script>
+	</Head>
+	<body onLoad="onLoad()">
+
+	<div class="pannello">
+	<div class="barretta" id="barretta">
+	<p class="titoletto">Barretta telefonica</p>
+	<form id="login" onsubmit="doLogin(this);return false;">
+		ext: <input class="myinput" type="text" id="userid" value="1000"><br/>
+		pin: <input class="myinput" type="password" id="pwd" value="1234"><br/>
+		<input class="myinput" type="hidden" id="displayname" value="operatore">
+		<input class="myinput" type="hidden" id="domain" value="*">
+		<input class="myinput" type="hidden" id="registrar" value="pbx">
+		<input class="mybutton" type="button" id="logout" value="logout" onClick="contaq('unregister')">
+		<input class="mybutton" type="submit" value="login"><br/>
+	</form>
+	
+	<form id="call" onsubmit="placeCall(this.number.value); return false;">
+		numero: <input class="myinput" type="text" id="number" value=""><br/>
+		servizio: <select class="myinput" id="prefix">
+					<option value="396">OkCom</value>
+					<option value="3940039">Callwithus</value>
+					<option value="3930039">Voipcheap</value>
+					<option value="out-">Unidata</value>
+					<option value="">Interno (nessun prefisso)</value>
+				  </select>
+		<br/>
+		<input class="mybutton" type="button" value="attacca" onClick="hangup()">
+		<input class="mybutton" type="submit" value="chiama"><br/>
+	</form>
+	</div>
+	</div>
+	
+	</Body>
+</Html>
