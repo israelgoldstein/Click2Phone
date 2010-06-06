@@ -27,24 +27,12 @@ namespace FSPhone
 		delegate void dlgWriteLine(String text);
 
 		public void WriteLine(String text) {
-			if (listBox1.InvokeRequired) {
+			if (listEventsDisplay.InvokeRequired) {
 					dlgWriteLine dlg = new dlgWriteLine(WriteLine);
-					listBox1.Invoke(dlg,text);
+					listEventsDisplay.Invoke(dlg,text);
 			} else {
-	    	    listBox1.Items.Add(text);
-			}
-		}
-		delegate void onDataReceived(object Sender, DataReceivedEventArgs e);
-		// Called asynchronously with a line of data
-		private void OnDataReceived(object Sender, DataReceivedEventArgs e)
-		{
-			if (listBox1.InvokeRequired) {
-				if (e != null && Sender != null && e.Data != null) {
-					onDataReceived dlg = new onDataReceived(OnDataReceived);
-					listBox1.Invoke(dlg,Sender, e);
-				}
-			} else {
-	    	    listBox1.Items.Add(e.Data);
+	    	    listEventsDisplay.Items.Add(text);
+	    	    listEventsDisplay.SelectedIndex=listEventsDisplay.Items.Count-1;
 			}
 		}
 		
@@ -63,24 +51,16 @@ namespace FSPhone
 		void MainFormLoad(object sender, EventArgs e)
 		{
 		}
-		
-		void Button1Click(object sender, EventArgs e)
-		{
-			String uniqueID = "testtest";
-			VoIPServer.eslConnection.Bgapi(textBox1.Text,"");
 			
-			/*
-			System.Diagnostics.Process proc = new System.Diagnostics.Process();
-			proc.EnableRaisingEvents=true;
-			proc.StartInfo.UseShellExecute=false;
-			proc.StartInfo.FileName="c:\\temp\\test.bat";
-			proc.StartInfo.CreateNoWindow=true;
-			proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-			proc.StartInfo.RedirectStandardOutput = true;
-			proc.OutputDataReceived += new DataReceivedEventHandler(OnDataReceived);
-			proc.Start();
-			proc.BeginOutputReadLine();
-			*/
+		void ListEventsDisplaySelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void BtnExecuteClick(object sender, EventArgs e)
+		{
+			//no buono: VoIPServer.eslConnection.ExecuteAsync(txtCommand.Text,"","");
+			Server.eslConnection.Bgapi(txtCommand.Text,"");
 		}
 	}
 }

@@ -28,6 +28,9 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
+    <Reference Include="ManagedEsl">
+      <HintPath>lib\ManagedEsl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -57,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VoIPServer.cs" />
     <EmbeddedResource Include="ContaQForm.resx">
       <DependentUpon>ContaQForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,14 +99,6 @@
     <None Include="static\registered.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\freeswitch\libs\esl\managed\ManagedEsl.csproj">
-      <Project>{DEE5837B-E01D-4223-B351-EDF9418F3F8E}</Project>
-      <Name>ManagedEsl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\freeswitch\src\mod\languages\mod_managed\managed\FreeSWITCH.Managed.csproj">
-      <Project>{834E2B2F-5483-4B80-8FE3-FE48FF76E5C0}</Project>
-      <Name>FreeSWITCH.Managed</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PhoneControls\PhoneControls.csproj">
       <Project>{5597AF9C-FF97-4E55-A105-730086BE09F3}</Project>
       <Name>PhoneControls</Name>

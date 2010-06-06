@@ -6,3 +6,11 @@ C:\Development\contaq\PhoneControls\bin\Debug\PhoneControls.dll
 C:\Development\contaq\PhoneControls\bin\Debug\PhoneControls.pdb
 C:\Development\contaq\PhoneControls\obj\Debug\PhoneControls.dll
 C:\Development\contaq\PhoneControls\obj\Debug\PhoneControls.pdb
+C:\Development\contaq\WebPhone\PhoneControls\bin\Debug\PhoneControls.dll
+C:\Development\contaq\WebPhone\PhoneControls\bin\Debug\PhoneControls.pdb
+C:\Development\contaq\WebPhone\PhoneControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\contaq\WebPhone\PhoneControls\obj\Debug\Sipek.ContaQ.PhoneBar.resources
+C:\Development\contaq\WebPhone\PhoneControls\obj\Debug\ContaQ.SipRequestArgs.resources
+C:\Development\contaq\WebPhone\PhoneControls\obj\Debug\PhoneControls.csproj.GenerateResource.Cache
+C:\Development\contaq\WebPhone\PhoneControls\obj\Debug\PhoneControls.dll
+C:\Development\contaq\WebPhone\PhoneControls\obj\Debug\PhoneControls.pdb
